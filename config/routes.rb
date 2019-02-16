@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'home/test'
+  get 'home/api'
   root 'home#test'
 end
