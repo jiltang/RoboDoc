@@ -8,45 +8,47 @@
 
         <script src="https://use.typekit.net/hoy3lrg.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    </head><body>
+    </head>
+
+    <body>
     <div id="frame">
 
         <div class="content">
             <div class="contact-profile">
-                <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-                <p>Harvey Specter</p>
-                <div class="social-media">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                </div>
+                <img src="/static/img/cute.jpg" alt="" />
+                <p>Chatbot</p>
             </div>
             <div class="messages">
                 <ul>
                     <li class="sent">
                         <img src="/static/img/cute.jpg" alt="" />
-
-                        <p>How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!</p>
-                    </li>
-                    <li class="replies">
-                        <p>When you're backed against the wall, break the god damn thing down.</p>
+                        <p>Welcome to Chatbot, your friendly pre-med! To help me diagnose your disease, please answer a few questions for me.</p>
                     </li>
                     <li class="sent">
                         <img src="/static/img/cute.jpg" alt="" />
-                        <p>Do you have chest pain?</p>
+                        <p>What is your biological sex?</p>
                     </li>
                     <li class="replies">
-                        <p>Yes</p>
+                        <a class="btn demographic btn-primary"  href="#" data-value="1">Other</a>
+                        <a class="btn demographic btn-primary"   href="#" data-value="0">Female</a>
+                        <a class="btn demographic btn-primary" href="#"  data-value="-1">Male</a>
                     </li>
-                    <li class="sent">
-                        <img src="/static/img/cute.jpg" alt="" />
-                        <p>Is your voice hoarse?</p>
-                    </li>
-                    <li class="replies">
-                        <a class="btn answer-option btn-primary" href="#"  data-value="-1">Not really</a>
-                        <a class="btn answer-option btn-primary"   href="#" data-value="0">A little</a>
-                        <a class="btn answer-option btn-primary"  href="#" data-value="1">Yes</a>
-                    </li>
+                    <!--<li class="sent">-->
+                        <!--<img src="/static/img/cute.jpg" alt="" />-->
+                        <!--<p>Do you have chest pain?</p>-->
+                    <!--</li>-->
+                    <!--<li class="replies">-->
+                        <!--<p>Yes</p>-->
+                    <!--</li>-->
+                    <!--<li class="sent">-->
+                        <!--<img src="/static/img/cute.jpg" alt="" />-->
+                        <!--<p>Is your voice hoarse?</p>-->
+                    <!--</li>-->
+                    <!--<li class="replies">-->
+                        <!--<a class="btn answer-option btn-primary" href="#"  data-value="-1">Not really</a>-->
+                        <!--<a class="btn answer-option btn-primary"   href="#" data-value="0">A little</a>-->
+                        <!--<a class="btn answer-option btn-primary"  href="#" data-value="1">Yes</a>-->
+                    <!--</li>-->
 
                 </ul>
             </div>
@@ -57,6 +59,19 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script>
+        $( ".demographic" ).click(function() {
+            $('.demographic').hide();
+
+            // get the data value of this element
+            var dataValue = $(this).attr('data-value');
+            $('.replies:last-child').append('<p>' + $(this).text() + '</p>');
+
+            // add new message on the left
+            $('.messages ul').append('<li class="sent"></li>')
+            $('.sent:last-child').append('<img src="/static/img/cute.jpg"/>')
+            $('.sent:last-child').append('<p>Hmm.  Processing.</p>')
+        });
+
         $( ".answer-option" ).click(function() {
             $('.answer-option').hide();
             

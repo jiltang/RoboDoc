@@ -8,7 +8,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #27ae60;
+  background: #111111;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1em;
   letter-spacing: 0.1px;
@@ -38,7 +38,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
 }
 
-.answer-option {
+.answer-option, .demographic {
     float: right;
     margin-left: 10px;
     color: #4286f4;
