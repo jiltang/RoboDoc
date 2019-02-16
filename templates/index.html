@@ -24,20 +24,22 @@
             <div class="messages">
                 <ul>
                     <li class="sent">
+                        <img src="/static/img/cute.jpg" alt="" />
+
                         <p>How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!</p>
                     </li>
                     <li class="replies">
                         <p>When you're backed against the wall, break the god damn thing down.</p>
                     </li>
                     <li class="sent">
-                        <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
+                        <img src="/static/img/cute.jpg" alt="" />
                         <p>Do you have chest pain?</p>
                     </li>
                     <li class="replies">
                         <p>Yes</p>
                     </li>
                     <li class="sent">
-                        <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
+                        <img src="/static/img/cute.jpg" alt="" />
                         <p>Is your voice hoarse?</p>
                     </li>
                     <li class="replies">
@@ -63,8 +65,9 @@
             $('.replies:last-child').append('<p>' + $(this).text() + '</p>');
             
             // add new message on the left
-            var dataValue = $(this).attr('data-value');
-            $('.replies:last-child').append('<p>' + $(this).text() + '</p>');
+            $('.messages ul').append('<li class="sent"></li>')
+            $('.sent:last-child').append('<img src="/static/img/cute.jpg"/>')
+            $('.sent:last-child').append('<p>Hmm.  Processing.</p>')
         });
 
     </script>
