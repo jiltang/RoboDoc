@@ -41,9 +41,9 @@
                         <p>Is your voice hoarse?</p>
                     </li>
                     <li class="replies">
-                        <a class="btn answer-option" data-value="-1">Not really</a>
-                        <a class="btn answer-option" data-value="0">A little</a>
-                        <a class="btn answer-option" data-value="1">Yes</a>
+                        <a class="btn answer-option btn-primary" href="#"  data-value="-1">Not really</a>
+                        <a class="btn answer-option btn-primary"   href="#" data-value="0">A little</a>
+                        <a class="btn answer-option btn-primary"  href="#" data-value="1">Yes</a>
                     </li>
 
                 </ul>
@@ -56,7 +56,15 @@
 
     <script>
         $( ".answer-option" ).click(function() {
-            console.log('test!');
+            $('.answer-option').hide();
+            
+            // get the data value of this element
+            var dataValue = $(this).attr('data-value');
+            $('.replies:last-child').append('<p>' + $(this).text() + '</p>');
+            
+            // add new message on the left
+            var dataValue = $(this).attr('data-value');
+            $('.replies:last-child').append('<p>' + $(this).text() + '</p>');
         });
 
     </script>
