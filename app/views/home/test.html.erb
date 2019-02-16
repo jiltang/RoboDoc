@@ -207,7 +207,7 @@ Website: http://emilcarlsson.se/
 </body>
 
 <script>
-    $( '.answer-option' ).on('click', function() {
+    $( '.answer-option' ).off('click').on('click', function() {
         console.log('test!');
     });
 </script>
