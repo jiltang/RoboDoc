@@ -5,4 +5,7 @@ class HomeController < ApplicationController
   def test
 
   end
+  def api
+      render :text => "Test"
+  end
 end
