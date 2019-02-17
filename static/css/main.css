@@ -1,8 +1,8 @@
-
-
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900");
 
-
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    font-family: "Source Sans Pro" !important;
+}
 
 body {
     align-items: center;
@@ -19,11 +19,42 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-
-
 #startScreen {
     height: 83vh;
     margin-top: 17vh;
+}
+
+#startScreen, #startScreen *{
+    color: white;
+    text-align: center;
+}
+
+#welcomeToChatbot {
+    text-align: center;
+    font-weight: 900;
+    font-size: 5em;
+}
+
+@media screen and (max-width: 1000px) {
+    #welcomeToChatbot {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #welcomeToChatbot {
+        font-size: 2.5em;
+    }
+
+    #robotIcon {
+        width: 15vh;
+        height: 15vh;
+    }
+
+    .speech-bubble h2 {
+        color: black !important;
+        font-size: 1em;
+    }
 }
 
 #disclaimer {
@@ -78,46 +109,12 @@ body {
     margin-left: -40px;
 }
 
-
 .hgroup {
     width: 30vw;
 }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    font-family: "Source Sans Pro" !important;
-}
-
-#welcomeToChatbot {
-    text-align: center;
-    font-weight: 900;
-    font-size: 5em;
-}
-
-@media screen and (max-width: 1000px) {
-    #welcomeToChatbot {
-        font-size: 3em;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    #welcomeToChatbot {
-        font-size: 2.5em;
-    }
-
-    #robotIcon {
-        width: 15vh;
-        height: 15vh;
-    }
-
-    .speech-bubble h2 {
-        color: black !important;
-        font-size: 1em;
-    }
-}
-
-#startScreen, #startScreen *{
-    color: white;
-    text-align: center;
+#chatsection {
+    height: 12vh;
 }
 
 #frame {
@@ -132,6 +129,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin-left: auto;
     margin-right: auto;
 }
+
 @media screen and (max-width: 360px) {
     #frame {
         width: 100%;
@@ -166,39 +164,48 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         min-width: 300px !important;
     }
 }
+
 @media screen and (min-width: 900px) {
     #frame .content {
         /*    width: calc(100% - 340px);*/
     }
 }
+
 #frame .content .contact-profile {
     width: 100%;
     height: 60px;
     line-height: 60px;
     background: #f5f5f5;
 }
+
 #frame .content .contact-profile img {
     width: 40px;
     border-radius: 50%;
     float: left;
     margin: 9px 12px 0 9px;
 }
+
 #frame .content .contact-profile p {
     float: left;
 }
+
 #frame .content .contact-profile .social-media {
     float: right;
 }
+
 #frame .content .contact-profile .social-media i {
     margin-left: 14px;
     cursor: pointer;
 }
+
 #frame .content .contact-profile .social-media i:nth-last-child(1) {
     margin-right: 20px;
 }
+
 #frame .content .contact-profile .social-media i:hover {
     color: #4286f4;
 }
+
 #frame .content .messages {
     height: auto;
     min-height: calc(100% - 93px);
@@ -208,18 +215,22 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     width: 100%;
     float: left;
 }
+
 @media screen and (max-width: 735px) {
     #frame .content .messages {
         max-height: calc(100% - 105px);
     }
 }
+
 #frame .content .messages::-webkit-scrollbar {
     width: 8px;
     background: transparent;
 }
+
 #frame .content .messages::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.3);
 }
+
 #frame .content .messages ul li {
     display: inline-block;
     clear: both;
@@ -228,26 +239,32 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     width: 100%;
     font-size: 0.9em;
 }
+
 #frame .content .messages ul li:nth-last-child(1) {
     margin-bottom: 20px;
 }
+
 #frame .content .messages ul li.sent img {
     margin: 6px 8px 0 0;
 }
+
 #frame .content .messages ul li.sent p {
 
     background: #f5f5f5;
 
 }
+
 #frame .content .messages ul li.replies img {
     float: right;
     margin: 6px 0 0 8px;
 }
+
 #frame .content .messages ul li.replies p {
     background: #4286f4;
     color: white;
     float: right;
 }
+
 #frame .content .messages ul li img {
     background: #E6EAEA;
     color: #E6EAEA;
@@ -255,6 +272,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border-radius: 50%;
     float: left;
 }
+
 #frame .content .messages ul li p {
     display: inline-block;
     padding: 10px 15px;
@@ -262,20 +280,24 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     max-width: 205px;
     line-height: 130%;
 }
+
 @media screen and (min-width: 735px) {
     #frame .content .messages ul li p {
         max-width: 300px;
     }
 }
+
 #frame .content .message-input {
     position: absolute;
     bottom: 0;
     width: 100%;
     z-index: 99;
 }
+
 #frame .content .message-input .wrap {
     position: relative;
 }
+
 #frame .content .message-input .wrap input {
     font-family:  "Source Sans Pro", sans-serif;
     float: left;
@@ -285,14 +307,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-size: 0.8em;
     color: #32465a;
 }
+
 @media screen and (max-width: 735px) {
     #frame .content .message-input .wrap input {
         padding: 15px 32px 16px 8px;
     }
 }
+
 #frame .content .message-input .wrap input:focus {
     outline: none;
 }
+
 #frame .content .message-input .wrap .attachment {
     position: absolute;
     right: 60px;
@@ -303,15 +328,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     opacity: .5;
     cursor: pointer;
 }
+
 @media screen and (max-width: 735px) {
     #frame .content .message-input .wrap .attachment {
         margin-top: 17px;
         right: 65px;
     }
 }
+
 #frame .content .message-input .wrap .attachment:hover {
     opacity: 1;
 }
+
 #frame .content .message-input .wrap button {
     float: right;
     border: none;
@@ -321,16 +349,23 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background: #32465a;
     color: #f5f5f5;
 }
+
 @media screen and (max-width: 735px) {
     #frame .content .message-input .wrap button {
         padding: 16px 0;
     }
 }
+
 #frame .content .message-input .wrap button:hover {
     background: #435f7a;
 }
+
 #frame .content .message-input .wrap button:focus {
     outline: none;
+}
+
+.chatbot {
+    height: 95vh;
 }
 
 .hide {
@@ -338,68 +373,30 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 @keyframes blink {
-    /**
-     * At the start of the animation the dot
-     * has an opacity of .2
-     */
     0% {
         opacity: .2;
     }
-    /**
-     * At 20% the dot is fully visible and
-     * then fades out slowly
-     */
     20% {
         opacity: 1;
     }
-    /**
-     * Until it reaches an opacity of .2 and
-     * the animation can start again
-     */
     100% {
         opacity: .2;
     }
 }
 
 .saving span {
-    /**
-     * Use the blink animation, which is defined above
-     */
     animation-name: blink;
-    /**
-     * The animation should take 1.4 seconds
-     */
     animation-duration: 1.4s;
-    /**
-     * It will repeat itself forever
-     */
     animation-iteration-count: infinite;
-    /**
-     * This makes sure that the starting style (opacity: .2)
-     * of the animation is applied before the animation starts.
-     * Otherwise we would see a short flash or would have
-     * to set the default styling of the dots to the same
-     * as the animation. Same applies for the ending styles.
-     */
     animation-fill-mode: both;
     font-size: 1.5em;
 }
 
 .saving span:nth-child(2) {
-    /**
-     * Starts the animation of the third dot
-     * with a delay of .2s, otherwise all dots
-     * would animate at the same time
-     */
     animation-delay: .2s;
 }
 
 .saving span:nth-child(3) {
-    /**
-     * Starts the animation of the third dot
-     * with a delay of .4s, otherwise all dots
-     * would animate at the same time
-     */
     animation-delay: .4s;
 }
 
@@ -411,6 +408,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background-color: rgb(230, 234, 234);
     padding: 1.5em;
     margin-bottom: 6em;
+}
+
+.diagnoses {
+    display: none;
 }
 
 .disease {
@@ -425,20 +426,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border-bottom: 1px solid #888;
     line-height: 2em;
     margin-bottom: 10px;
-}
-
-.chatbot {
-    height: 95vh;
-}
-
-
-
-.diagnoses {
-    display: none;
-}
-
-#chatsection {
-    height: 12vh;
 }
 
 #resultsection {
