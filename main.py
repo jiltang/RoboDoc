@@ -69,6 +69,8 @@ def generateQuestionForPatient(patient):
     mappingsArr = np.loadtxt('weights-output.txt', delimiter='\t', usecols=range(1, len(symptoms)+1))
     mappingsArr[0:23, 1:] = mappingsArr[0:23, 1:] * 10
     print(mappingsArr)
+    normalizationArray = mappingsArr.sum(axis=1).reshape(-1,1 )
+    mappingsArr = mappingsArr / normalizationArray
     mappingsArr = mappingsArr / mappingsArr.sum(axis=0)
     logging.info(mappingsArr)
     
