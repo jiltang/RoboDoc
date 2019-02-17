@@ -47,27 +47,27 @@ function addQuestion(data) {
 
     } else {
         questionTxt = data["question"];
-    answerOpts = data["options"];
-    window.patientID = data['ID'];
+        answerOpts = data["options"];
+        window.patientID = data['ID'];
 
-    $('.sent:last-child').hide();
+        $('.sent:last-child').hide();
 
-    $('.messages ul').append('<li class="sent"></li>');
-    $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
+        $('.messages ul').append('<li class="sent"></li>');
+        $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
 
-    $('.sent:last-child').append("<p>" + questionTxt + "</p>");
-    $('.messages ul').append('<li class="replies"></li>');
-    $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
-    console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
-    
-    window.questionID = data['questionID'];
-    
-    Object.entries(answerOpts).forEach(function(x) {
-        $('.replies:last-child').append($('<a class="btn answer-option btn-primary animated slideInRight" data-value="' + x[1] + '">' + x[0] + '</a>').hide());
-    });
-    $('.replies:last-child > a').delay(500).fadeIn(1000);
-    $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
-    console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
+        $('.sent:last-child').append("<p>" + questionTxt + "</p>");
+        $('.messages ul').append('<li class="replies"></li>');
+        $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
+        console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
+
+        window.questionID = data['questionID'];
+
+        Object.entries(answerOpts).forEach(function(x) {
+            $('.replies:last-child').append($('<a class="btn answer-option btn-primary animated slideInRight" data-value="' + x[1] + '">' + x[0] + '</a>').hide());
+        });
+        $('.replies:last-child > a').delay(500).fadeIn(1000);
+        $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
+        console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
     }
 }
 
@@ -75,7 +75,7 @@ $(document).on('click', '.age', function() {
 
     var age = $(this).attr('data-value');
     $('.replies:last-child').append('<p>' + $(this).text() + '</p>');
-        $('.age').hide();
+    $('.age').hide();
 
     data = {
         "age": age,
@@ -83,19 +83,19 @@ $(document).on('click', '.age', function() {
     }
     console.log(data);
     $.ajax({
-      url:"/createPatientID",
-      type:"POST",
-      data:JSON.stringify(data),
-      contentType:"application/json",
-      dataType:"json",
-      success: addQuestion
+        url:"/createPatientID",
+        type:"POST",
+        data:JSON.stringify(data),
+        contentType:"application/json",
+        dataType:"json",
+        success: addQuestion
     });
 
     // add new message on the left
     $('.messages ul').append('<li class="sent"></li>');
     $('.sent:last-child').append('<img class="animated fadeInUp" src="/static/img/cute.png"/>');
     $('.sent:last-child').append('<p class="saving animated fadeInUp"><span>.</span><span>.</span><span>.</span></p>');
-  
+
     $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
 });
 
@@ -113,12 +113,12 @@ $(document).on("click", ".answer-option", function() {
     }
 
     $.ajax({
-      url:"/receiveResponse",
-      type:"POST",
-      data:JSON.stringify(data),
-      contentType:"application/json",
-      dataType:"json",
-      success: addQuestion
+        url:"/receiveResponse",
+        type:"POST",
+        data:JSON.stringify(data),
+        contentType:"application/json",
+        dataType:"json",
+        success: addQuestion
     });
 
     // add new message on the left
@@ -129,11 +129,12 @@ $(document).on("click", ".answer-option", function() {
     console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
 });
 
-
-
 function populateDiagnoses() {
     var diagnoses = window.diagnoses;
-    $('.replies:last-child').text("I've found some diagnoses that may be helpful!");
+    $('.sent:last-child').hide();
+    $('.messages ul').append('<li class="sent"></li>');
+    $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
+    $('.sent:last-child').append("<p>I've found some diagnoses that may be helpful!</p>");
     $('.diagnoses').css('display', 'block');
     diagnoses.forEach(function(element) {
         $('.diagnoses').append('<section class="disease"></section>');
@@ -143,7 +144,7 @@ function populateDiagnoses() {
     });
     $("#msgframe").stop().animate({ scrollTop: $("#diagnoses").get(0).scrollHeight}, 1000);
 }
-                      
+
 $(document).one("click", '#robotIcon, .speech-bubble', function() {
     $([document.documentElement, document.body]).stop().animate({ scrollTop: $("#frame").offset().top}, 1000);
     $('.messages ul').append('<li class="sent"></li>');
