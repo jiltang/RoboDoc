@@ -22,8 +22,8 @@ body {
 
 
 #startScreen {
-    height: 75vh;
-    margin-top: 25vh;
+    height: 83vh;
+    margin-top: 17vh;
 }
 
 #disclaimer {
@@ -430,9 +430,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     height: 95vh;
 }
 
-#frame2 {
-    height: 7em;
-}
+
 
 .diagnoses {
     display: none;
