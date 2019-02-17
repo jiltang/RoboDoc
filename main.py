@@ -132,9 +132,14 @@ def createPatientID():
 @app.route('/receiveResponse', methods=['POST'])
 def receiveResponse():
     ds = datastore.Client()
+    print("Line 135!")
     info = request.get_json()
+    print("Line 137!")
     patientID = info['patientID']
+    print("Line 139!")
     patientID = patientID[2:-1]
+    print("Line 141!")
+    print("ID:", patientID)
     questionID = info['questionID']
     answer = info['answer']
     
