@@ -1,32 +1,17 @@
-# Copyright 2015 Google Inc. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-# [START gae_flex_quickstart]
 import logging
 import numpy as np
-
 from math import ceil
-
 from flask import Flask, render_template, request, jsonify
 from google.cloud import datastore
-logging.basicConfig(level=logging.DEBUG)
 
+# we silence warnings on end user credentials
+import warnings
+warnings.filterwarnings("ignore")
+
+#constants
 NUM_SYMPTOMS = 23
-
 DIAGNOSIS = 137
 NEW_QUESTION = 138
-
 NUM_COMMON = 23
 
 app = Flask(__name__)
@@ -51,7 +36,6 @@ def printSymptomsWeights(probabilityScores):
         return str(out)
     
 def generateQuestionForPatient(patient):
-    print(patient['weights'])
     np.set_printoptions(formatter={'float': lambda x: "{0:0.3f}".format(x)})
 
     symptomsFile = open('symptomsList.txt', 'r')
@@ -68,35 +52,30 @@ def generateQuestionForPatient(patient):
     
     mappingsArr = np.loadtxt('weights-output.txt', delimiter='\t', usecols=range(1, len(symptoms)+1))
     mappingsArr[0:23, 1:] = mappingsArr[0:23, 1:] * 10
-    print(mappingsArr)
     normalizationArray = mappingsArr.sum(axis=1).reshape(-1,1 )
     mappingsArr = mappingsArr / normalizationArray
     mappingsArr = mappingsArr / mappingsArr.sum(axis=0)
     if patient['sex'] == '0':
         mappingsArr[31][:] = 0
         mappingsArr[38][:] = 0
-    logging.info(mappingsArr)
-    logging.info("endo" + str(mappingsArr[31]))
     
     runningScores = np.c_[diseasesNP, np.zeros((len(diseases), 1))]
     
     weights = np.array(patient['weights'])    
-    logging.info(weights)
-    logging.info(calculateProbabilityScore(mappingsArr, weights))
     runningScores[:, 1] = np.squeeze(calculateProbabilityScore(mappingsArr, weights))
     runningScoresNew = runningScores[runningScores[:,1].astype(np.float).argsort()[::-1]]
-    logging.info(runningScoresNew)
+    print(runningScoresNew)
     numDiseases = len(diseases)
     numSymptoms = len(symptoms)
     doneIndices = list(np.nonzero(weights)[0])
     numQuestions = len(doneIndices)
-    print(np.std(runningScores[:, 1].astype(np.float)))
+    print("Current STDEV: {0:.2f}".format(float(np.std(runningScores[:, 1].astype(np.float)))))
+    
     if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.12 - 0.01 * numQuestions):
-        # we're finished
+        # we're finished—output the top diseases
         nums = runningScores[:, 1].astype(np.float)
         bestScore = np.max(nums)
         winningIndices =  nums.argsort()[-3:][::-1]
-        print(winningIndices)
         winningDiseases = runningScores[np.array(winningIndices)]
         return DIAGNOSIS, winningDiseases
         
@@ -123,10 +102,7 @@ def generateQuestionForPatient(patient):
 @app.route('/createPatientID', methods=['POST'])
 def createPatientID():
     ds = datastore.Client()
-    logging.info(request.mimetype)
-    logging.info(request.data)
     info = request.get_json()
-    logging.info("Test2!!")
     age = info['age']
     sex = info['sex']
     weights = [0] * NUM_SYMPTOMS
@@ -164,13 +140,11 @@ def receiveResponse():
     ds = datastore.Client()
     info = request.get_json()
     patientID = info['patientID']
-    if patientID.startswith("b'"): patientID = patientID[2:-1]
-    print("ID:", patientID)
+    if patientID.startswith("b'"): 
+        patientID = patientID[2:-1] #strip weird binary b' stuff
     questionID = info['questionID']
     answer = info['answer']
     
-
-#    weights = [0] * NUM_SYMPTOMS
     entity = ds.get(datastore.key.Key.from_legacy_urlsafe(patientID))
     
     # we find the index we need to update
@@ -188,7 +162,6 @@ def receiveResponse():
     returnType = output[0]
 
     if returnType == DIAGNOSIS:
-        print("A")
         returnType, winningDiseases = output
         winningDiseases = winningDiseases.tolist()
         
@@ -222,7 +195,4 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-    # This is used when running locally. Gunicorn is used to run the
-    # application on Google App Engine. See entrypoint in app.yaml.
     app.run(host='0.0.0.0', port=3000, debug=True)
-# [END gae_flex_quickstart]
