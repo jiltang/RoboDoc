@@ -1,0 +1,23 @@
+fever
+nasal
+dull pain
+diarrhea
+itch
+cough
+nausea
+rash
+faint
+joint
+sore
+fatigue
+headache
+ear
+eye
+chest
+inflammation
+seizure
+voice
+urine
+chills
+fracture
+abdominal
