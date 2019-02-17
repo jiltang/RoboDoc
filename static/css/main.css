@@ -38,7 +38,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
 }
 
-.answer-option, .demographic {
+.answer-option, .sex, .age {
     float: right;
     margin-left: 10px;
     color: #4286f4;
