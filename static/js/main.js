@@ -162,4 +162,3 @@ $(document).one("click", '#robotIcon, .speech-bubble', function() {
     $('.replies:last-child').append($('<a class="btn sex btn-primary animated slideInRight" data-value="0">Male</a>').hide());
     $('.replies:last-child > a').delay(3500).fadeIn(1000);
 });
->>>>>>> a4d6d2bde377d072abcc346818453d0bce2c17a5
