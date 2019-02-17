@@ -69,6 +69,8 @@ def generateQuestionForPatient(patient):
     mappingsArr = np.loadtxt('weights-output.txt', delimiter='\t', usecols=range(1, len(symptoms)+1))
     mappingsArr[0:23, 1:] = mappingsArr[0:23, 1:] * 10
     print(mappingsArr)
+    normalizationArray = mappingsArr.sum(axis=1).reshape(-1,1 )
+    mappingsArr = mappingsArr / normalizationArray
     mappingsArr = mappingsArr / mappingsArr.sum(axis=0)
     logging.info(mappingsArr)
     
@@ -105,7 +107,7 @@ def generateQuestionForPatient(patient):
 
         remaining = list(filter(lambda x : x not in doneIndices, ranking))
         bestSymptom = symptoms[remaining[0]]
-        options = {"Yes": "1", "Maybe": "0.25", "No": "-0.5"}
+        options = {"Yes": "1", "Maybe": "0.25", "No": "-0.2"}
 
         questions = open('questions.txt', 'r')
         questions = dict([line.lower().split(': ') for line in questions.readlines()])
