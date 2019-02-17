@@ -138,5 +138,4 @@ $(document).on("click", ".answer-option", function() {
 
 $("#robotIcon, .speech-bubble").click( function() {
     $('.curtainPanel').css("width", "50%");
-    $('.behindCurtain').css('opacity', '1.0');
 });
