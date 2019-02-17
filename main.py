@@ -81,13 +81,15 @@ def generateQuestionForPatient(patient):
     doneIndices = list(np.nonzero(weights)[0])
     numQuestions = len(doneIndices)
     print(np.std(runningScores[:, 1].astype(np.float)))
-    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.1 * numQuestions):
+    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.2):
         # we're finished
-        bestScore = np.max(runningScores)
-        runningScores = (runningScores > 0.5 * bestScore)
-        winningIndices = list(np.nonzero(runningScores))
+        nums = runningScores[:, 1].astype(np.float)
+        bestScore = np.max(nums)
+        nums = (nums > 0.5 * bestScore)
+        winningIndices = np.nonzero(nums)[0]
         print(winningIndices)
-        assert False
+        winningDiseases = runningScores[np.array(winningIndices)]
+        return DIAGNOSIS, winningDiseases
         
     else:
         numTop = ceil(numDiseases - (numDiseases/numSymptoms) * (numQuestions - 1))
@@ -127,15 +129,25 @@ def createPatientID():
 
     patientKey = str(entity.key.to_legacy_urlsafe())
 
-    _, question, options, questionID = generateQuestionForPatient(entity)
-    
-    output = {
-        "ID": patientKey,
-        "question": question,
-        "options": options,
-        "questionID": questionID
-    }
-    return jsonify(output)
+    output = generateQuestionForPatient(entity)
+    returnType = output[0]
+    if returnType == DIAGNOSIS:
+        returnType, winningDiseases = output
+        winningDiseases = winningDiseases.tolist()
+        data = {
+            "type": "diagnosis",
+            "diagnoses": diagnoses
+        }
+    else:
+        returnType, question, options, questionID = output
+        data = {
+            "type": "question",
+            "ID": patientKey,
+            "question": question,
+            "options": options,
+            "questionID": questionID
+        }
+    return jsonify(data)
 
 @app.route('/receiveResponse', methods=['POST'])
 def receiveResponse():
