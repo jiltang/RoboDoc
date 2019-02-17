@@ -1,9 +1,4 @@
-var clickEvent = (function() {
-  if ('ontouchstart' in document.documentElement === true)
-    return 'touchstart';
-  else
-    return 'click';
-})();
+
 
 function addNewMessage() {
     $('.messages ul').append('<li class="sent"></li>');
@@ -19,7 +14,7 @@ function sleep(milliseconds) {
     }
 }
 
-$(document).on("click", ".sex", function() {
+$(document).on("click touchstart tap", ".sex", function() {
     $('.sex').hide();
 
     // get the data value of this element
@@ -106,7 +101,7 @@ $(document).on('click', '.age', function() {
     $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
 });
 
-$(document).on("click", ".answer-option", function() {
+$(document).on("click touchstart tap", ".answer-option", function() {
     $('.answer-option').hide();
 
     // get the data value of this element
@@ -153,7 +148,7 @@ function populateDiagnoses() {
     $([document.documentElement, document.body]).stop().animate({ scrollTop: $("#resultsection").offset().top}, 1000);
 }
 
-$(document).one("click", '#robotIcon, .speech-bubble', function() {
+$(document).one("click touchstart tap", '#robotIcon, .speech-bubble', function() {
     $([document.documentElement, document.body]).stop().animate({ scrollTop: $("#chatsection").offset().top}, 1000);
     $('.messages ul').append('<li class="sent"></li>');
     $('.sent:last-child').append($('<img class="animated fadeInUp" src="/static/img/cute.png" alt="Friendly RoboDoc"/>').hide());
