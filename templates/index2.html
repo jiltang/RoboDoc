@@ -19,33 +19,33 @@
 </head>
 <body>
 <nav class="navbar fixed-top navbar-light bg-light">
-  <a class="navbar-brand" >RoboDoc</a>
+    <a class="navbar-brand" >RoboDoc</a>
 
 </nav>
 
 <div class = "container" id="startScreen">
     <div id="welcomeMessage">
-		<h1 id="welcomeToChatbot">Welcome to RoboDoc!</h1>
-	</div>
-	<div id="tagLine">
-		<h3> Your Friendly Medical Assistant</h3>
-	</div>
-        <br/>        
-	<a href="#frame2">
+        <h1 id="welcomeToChatbot">Welcome to RoboDoc!</h1>
+    </div>
+    <div id="tagLine">
+        <h3> Your Friendly Medical Assistant</h3>
+    </div>
+    <br/>
+    <a href="#chatsection">
         <img id="robotIcon" src="/static/img/cute.png"/>
         <hgroup class="speech-bubble">
-<h2>Click me!<br/> I'm here to help!</h2></a>
-</hgroup>
-        
-        <div class="row">
-    <div class="container">
-</div>
-<div id="disclaimer">
-		<p> Disclaimer: RoboDoc is here to help give you possible diagnoses based on your symptoms. However, RoboDoc is not a doctor and should not be used in place of certified doctors. Please still seek professional medical assistance. </p>
-	</div>
+            <h2>Click me!<br/> I'm here to help!</h2></a>
+    </hgroup>
+
+    <div class="row">
+        <div class="container">
+        </div>
+        <div id="disclaimer">
+            <p> Disclaimer: RoboDoc is here to help give you possible diagnoses based on your symptoms. However, RoboDoc is not a doctor and should not be used in place of certified doctors. Please still seek professional medical assistance. </p>
+        </div>
     </div>
 </div>
-<div id="frame2"></div>
+<div id="chatsection"></div>
 <div class= "container chatbot">
     <div id="frame">
         <div class="content">
@@ -60,14 +60,15 @@
         </div>
     </div>
 </div>
-      
+
+<div id="resultsection"></div>
 <div class= "container diagnoses"></div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="/static/js/main.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/static/js/main.js"></script>
 
 </body>
 </html>
