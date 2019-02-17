@@ -19,8 +19,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+
+
 #startScreen {
-    height: 100vh;
+    height: 75vh;
     margin-top: 25vh;
 }
 
@@ -37,13 +39,23 @@ body {
     height: 30vh;
 }
 
+#robotIcon:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
 .speech-bubble {
-    padding: 10px;
+    padding: 15px;
     display: inline-block;
 	position: relative;
 	background: white;
 	border-radius: .4em;
     width: 20vw;
+}
+
+.speech-bubble:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s;
 }
 
 .speech-bubble h2 {
@@ -95,6 +107,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   max-height: 720px;
   background: #E6EAEA;
   overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 @media screen and (max-width: 360px) {
   #frame {
@@ -106,10 +120,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .answer-option, .sex, .age {
     float: right;
     margin-left: 10px;
-    color: #4286f4;
-    background-color: white;
+    color: white !important;
+    background-color: white! 
 }
 
+.answer-option:hover, .sex:hover, .age:hover {
+    cursor: pointer;
+}
 
 #frame .content {
   width: 100%;

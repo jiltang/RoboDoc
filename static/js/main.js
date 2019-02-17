@@ -27,13 +27,13 @@ $(document).on("click", ".sex", function() {
     $('.messages ul').append('<li class="replies"></li>');
     $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
     console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
-    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" href="#" data-value="6">60+</a>').hide());
-    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" href="#" data-value="5">41-60</a>').hide());
-    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" href="#" data-value="4">19-40</a>').hide());
-    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" href="#" data-value="3">14-18</a>').hide());
-    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" href="#" data-value="2">6-13</a>').hide());
-    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" href="#" data-value="1">3-5</a>').hide());
-    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" href="#" data-value="0">0-2</a>').hide());
+    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" data-value="6">60+</a>').hide());
+    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" data-value="5">41-60</a>').hide());
+    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" data-value="4">19-40</a>').hide());
+    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" data-value="3">14-18</a>').hide());
+    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" data-value="2">6-13</a>').hide());
+    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" data-value="1">3-5</a>').hide());
+    $('.replies:last-child').append($('<a class="btn age btn-primary animated slideInRight" data-value="0">0-2</a>').hide());
     $('.replies:last-child > a').delay(750).fadeIn(1000);
 
     $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
@@ -70,7 +70,7 @@ function addQuestion(data) {
     window.questionID = data['questionID'];
     
     Object.entries(answerOpts).forEach(function(x) {
-        $('.replies:last-child').append($('<a class="btn answer-option btn-primary animated slideInRight"  href="#" data-value="' + x[1] + '">' + x[0] + '</a>').hide());
+        $('.replies:last-child').append($('<a class="btn answer-option btn-primary animated slideInRight" data-value="' + x[1] + '">' + x[0] + '</a>').hide());
     });
     $('.replies:last-child > a').delay(500).fadeIn(1000);
     $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
