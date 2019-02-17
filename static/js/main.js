@@ -29,6 +29,8 @@ function addQuestion(data) {
     answerOpts = data["options"];
     window.patientID = data['ID'];
 
+    $('.sent:last-child').hide();
+
     $('.messages ul').append('<li class="sent"></li>');
     $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
 
@@ -65,6 +67,11 @@ $(document).on('click', '.age', function() {
       dataType:"json",
       success: addQuestion
     });
+
+    $('.messages ul').append('<li class="sent"></li>');
+    $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
+    $('.sent:last-child').append('<p class="saving"><span>.</span><span>.</span><span>.</span></p>');
+    $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
 });
 
 $(document).on("click", ".answer-option", function() {
@@ -92,7 +99,7 @@ $(document).on("click", ".answer-option", function() {
     // add new message on the left
     $('.messages ul').append('<li class="sent"></li>');
     $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
-    $('.sent:last-child').append('<p>Hmm.  Processing.</p>');
+    $('.sent:last-child').append('<p class="saving"><span>.</span><span>.</span><span>.</span></p>');
     $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
     console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
 });
