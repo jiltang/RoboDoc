@@ -1,0 +1,23 @@
+Fever: Do you have a fever?
+Nasal: Is your nose runny or stuffy?
+Dull pain: Do you have dull pain?
+Diarrhea: Do you have diarrhea?
+Itch: Are you itchy?
+Cough: Are you coughing?
+Nausea: Are you nauseous or have you vomited recently? 
+Rash: Do you have any rashes?
+Faint: Have you fainted recently?
+Joint: Do you have joint pain?
+Sore: Do you have a sore throat?
+Fatigue: Are you more tired than usual?
+Headache: Do you have a headache?
+Ear: Is there pressure in your ears?
+Eye: Are your eyes itchy and/or red?
+Chest: Do you have chest pain?
+Inflammation: Do you have any inflammation?
+Seizure: Have you had any seizures recently?
+Voice: Is your voice hoarse?
+Urine: Are you having issues or pain urinating?
+Chills: Do you have chills?
+Fracture: Have you fractured any bones recently?
+Abdominal: Do you have abdominal pain?
