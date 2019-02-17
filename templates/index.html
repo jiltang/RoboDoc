@@ -33,6 +33,13 @@
                         <a class="btn demographic btn-primary"   href="#" data-value="0">Female</a>
                         <a class="btn demographic btn-primary" href="#"  data-value="-1">Male</a>
                     </li>
+                    <li class="sent" hidden>
+                        <img src="/static/img/cute.jpg" alt="" />
+                        <p>What is your age?</p>
+                    </li>
+                    <li class="replies" hidden>
+                        <input id="number" type="number" max="120" min="0">
+                    </li>
                     <!--<li class="sent">-->
                         <!--<img src="/static/img/cute.jpg" alt="" />-->
                         <!--<p>Do you have chest pain?</p>-->
@@ -66,10 +73,14 @@
             var dataValue = $(this).attr('data-value');
             $('.replies:last-child').append('<p>' + $(this).text() + '</p>');
 
-            // add new message on the left
-            $('.messages ul').append('<li class="sent"></li>')
-            $('.sent:last-child').append('<img src="/static/img/cute.jpg"/>')
-            $('.sent:last-child').append('<p>Hmm.  Processing.</p>')
+            $('.demographic').removeAttr("hidden")
+
+            console.log("done")
+
+            // // add new message on the left
+            // $('.messages ul').append('<li class="sent"></li>')
+            // $('.sent:last-child').append('<img src="/static/img/cute.jpg"/>')
+            // $('.sent:last-child').append('<p>Hmm.  Processing.</p>')
         });
 
         $( ".answer-option" ).click(function() {
