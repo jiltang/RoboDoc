@@ -73,7 +73,7 @@ function addQuestion(data) {
     }
 }
 
-$(document).on('click', '.age', function() {
+$(document).on('click tap', '.age', function() {
 
     var age = $(this).attr('data-value');
     $('.replies:last-child').append('<p>' + $(this).text() + '</p>');
