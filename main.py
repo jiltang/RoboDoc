@@ -87,7 +87,7 @@ def generateQuestionForPatient(patient):
     doneIndices = list(np.nonzero(weights)[0])
     numQuestions = len(doneIndices)
     print(np.std(runningScores[:, 1].astype(np.float)))
-    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.15):
+    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.12 - 0.01 * numQuestions):
         # we're finished
         nums = runningScores[:, 1].astype(np.float)
         bestScore = np.max(nums)
@@ -107,7 +107,7 @@ def generateQuestionForPatient(patient):
 
         remaining = list(filter(lambda x : x not in doneIndices, ranking))
         bestSymptom = symptoms[remaining[0]]
-        options = {"Yes": "1", "Maybe": "0.25", "No": "-0.2"}
+        options = {"Yes": "1", "A little": "0.25", "No": "-0.2"}
 
         questions = open('questions.txt', 'r')
         questions = dict([line.lower().split(': ') for line in questions.readlines()])
