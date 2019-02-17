@@ -27,6 +27,8 @@ NUM_SYMPTOMS = 23
 DIAGNOSIS = 137
 NEW_QUESTION = 138
 
+NUM_COMMON = 23
+
 app = Flask(__name__)
 
 @app.route('/apiTest', methods=['POST'])
@@ -64,7 +66,9 @@ def generateQuestionForPatient(patient):
     diseasesNP = np.array(diseases)
     diseasesNP.shape = (-1, 1)
     
-    mappingsArr = np.loadtxt('symptomsOut.txt', delimiter='\t', usecols=range(1, len(symptoms)+1))
+    mappingsArr = np.loadtxt('weights-output.txt', delimiter='\t', usecols=range(1, len(symptoms)+1))
+    mappingsArr[0:23, 1:] = mappingsArr[0:23, 1:] * 10
+    print(mappingsArr)
     mappingsArr = mappingsArr / mappingsArr.sum(axis=0)
     logging.info(mappingsArr)
     
@@ -81,12 +85,11 @@ def generateQuestionForPatient(patient):
     doneIndices = list(np.nonzero(weights)[0])
     numQuestions = len(doneIndices)
     print(np.std(runningScores[:, 1].astype(np.float)))
-    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.27):
+    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.15):
         # we're finished
         nums = runningScores[:, 1].astype(np.float)
         bestScore = np.max(nums)
-        nums = (nums > 0.5 * bestScore)
-        winningIndices = np.nonzero(nums)[0]
+        winningIndices =  nums.argsort()[-3:][::-1]
         print(winningIndices)
         winningDiseases = runningScores[np.array(winningIndices)]
         return DIAGNOSIS, winningDiseases
