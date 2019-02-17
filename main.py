@@ -85,7 +85,7 @@ def generateQuestionForPatient(patient):
     doneIndices = list(np.nonzero(weights)[0])
     numQuestions = len(doneIndices)
     print(np.std(runningScores[:, 1].astype(np.float)))
-    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.15):
+    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.05):
         # we're finished
         nums = runningScores[:, 1].astype(np.float)
         bestScore = np.max(nums)
@@ -100,6 +100,7 @@ def generateQuestionForPatient(patient):
         indices = np.vectorize(lambda x: diseases.index(x))(subset)
         mappingsArrNew = mappingsArr[indices]
         stdevs = np.std(mappingsArrNew, axis=0)
+        stdevs[0] += 0.2
         ranking = list(np.argsort(stdevs)[::-1])
 
         remaining = list(filter(lambda x : x not in doneIndices, ranking))
@@ -183,6 +184,12 @@ def receiveResponse():
         print("A")
         returnType, winningDiseases = output
         winningDiseases = winningDiseases.tolist()
+        
+        with open('descriptions.txt') as descriptions:
+            descriptionsMap = dict(map(lambda x: (x[0], x[1:3]), [x.strip().split('::') for x in descriptions.readlines()]))
+            for i in range(len(winningDiseases)):
+                winningDiseases[i].append(0)
+                winningDiseases[i][1], winningDiseases[i][2] = descriptionsMap[winningDiseases[i][0]]
         data = {
             "type": "diagnosis",
             "diagnoses": winningDiseases

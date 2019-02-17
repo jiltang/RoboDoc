@@ -43,14 +43,7 @@ $(document).on("click", ".sex", function() {
 function addQuestion(data) {
     if (data["type"] == "diagnosis") {
         window.diagnoses = data["diagnoses"];
-        var diagnoses = window.diagnoses;
-        alert(diagnoses);
-
-        diagnoses.forEach(function(element) {
-            addNewMessage();
-            $('.sent:last-child').append('<p><b>' + element[0] + '</b>'+ '</p><p>' + element[1] + '</p>');
-        });
-            $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
+        populateDiagnoses();
 
     } else {
         questionTxt = data["question"];
@@ -137,5 +130,19 @@ $(document).on("click", ".answer-option", function() {
 });
 
 $(document).on("click", '#robotIcon, .speech-bubble', function() {
-    $([document.documentElement, document.body]).stop().animate({ scrollTop: $("#frame").offset().top}, 1000);
+    $([document.documentElement, document.body]).stop().animate({ scrollTop: $("#frame2").offset().top}, 1000);
 });
+
+function populateDiagnoses() {
+    var diagnoses = window.diagnoses;
+    $('.replies:last-child').text("I've found some diagnoses that may be helpful!");
+    $('.diagnoses').css('display', 'block');
+    diagnoses.forEach(function(element) {
+        $('.diagnoses').append('<section class="disease"></section>');
+        $('.disease:last-child').append('<h4>' + element[0] + '</h4>');
+        $('.disease:last-child').append('<p>' + element[1] + '</p>');
+        $('.disease:last-child').append('<a href="' + element[0] + '"> » Find out more</a>');
+    });
+    $("#msgframe").stop().animate({ scrollTop: $("#diagnoses").get(0).scrollHeight}, 1000);
+}
+                      

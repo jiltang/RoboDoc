@@ -139,13 +139,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 @media screen and (max-width: 735px) {
   #frame .content {
-    width: calc(100% - 58px);
+/*    width: calc(100% - 58px);*/
     min-width: 300px !important;
   }
 }
 @media screen and (min-width: 900px) {
   #frame .content {
-//    width: calc(100% - 340px);
+/*    width: calc(100% - 340px);*/
   }
 }
 #frame .content .contact-profile {
@@ -201,8 +201,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   display: inline-block;
   clear: both;
   float: left;
-  margin: 15px 15px 5px 15px;
-  width: calc(100% - 25px);
+  margin: 5px -25px 5px -25px;
+  width: 100%;
   font-size: 0.9em;
 }
 #frame .content .messages ul li:nth-last-child(1) {
@@ -409,5 +409,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 #frame2 {
-    height: 6em;
+    height: 7em;
+}
+
+.diagnoses {
+    display: none;
 }
