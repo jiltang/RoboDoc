@@ -146,6 +146,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     /*    background-color: white !important;*/
     border-radius: 10px;
     font-size: 1em;
+    cursor: pointer;
 }
 
 .answer-option:hover, .sex:hover, .age:hover {
