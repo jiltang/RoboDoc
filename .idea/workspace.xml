@@ -2,100 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00192c6d-fd1c-41a1-a5f0-54f7bff76750" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/.prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/animate-config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/bower.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/gulpfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/_base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/bounce.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/flash.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/headShake.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/heartBeat.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/jello.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/pulse.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/rubberBand.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/shake.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/swing.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/tada.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/attention_seekers/wobble.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/bouncing_entrances/bounceIn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/bouncing_entrances/bounceInDown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/bouncing_entrances/bounceInLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/bouncing_entrances/bounceInRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/bouncing_entrances/bounceInUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/bouncing_exits/bounceOut.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/bouncing_exits/bounceOutDown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/bouncing_exits/bounceOutLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/bouncing_exits/bounceOutRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/bouncing_exits/bounceOutUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_entrances/fadeIn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_entrances/fadeInDown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_entrances/fadeInDownBig.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_entrances/fadeInLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_entrances/fadeInLeftBig.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_entrances/fadeInRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_entrances/fadeInRightBig.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_entrances/fadeInUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_entrances/fadeInUpBig.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_exits/fadeOut.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_exits/fadeOutDown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_exits/fadeOutDownBig.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_exits/fadeOutLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_exits/fadeOutLeftBig.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_exits/fadeOutRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_exits/fadeOutRightBig.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_exits/fadeOutUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/fading_exits/fadeOutUpBig.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/flippers/flip.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/flippers/flipInX.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/flippers/flipInY.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/flippers/flipOutX.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/flippers/flipOutY.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/lightspeed/lightSpeedIn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/lightspeed/lightSpeedOut.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/rotating_entrances/rotateIn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/rotating_entrances/rotateInDownLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/rotating_entrances/rotateInDownRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/rotating_entrances/rotateInUpLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/rotating_entrances/rotateInUpRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/rotating_exits/rotateOut.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/rotating_exits/rotateOutDownLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/rotating_exits/rotateOutDownRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/rotating_exits/rotateOutUpLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/rotating_exits/rotateOutUpRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/sliding_entrances/slideInDown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/sliding_entrances/slideInLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/sliding_entrances/slideInRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/sliding_entrances/slideInUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/sliding_exits/slideOutDown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/sliding_exits/slideOutLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/sliding_exits/slideOutRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/sliding_exits/slideOutUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/specials/hinge.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/specials/jackInTheBox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/specials/rollIn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/specials/rollOut.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/zooming_entrances/zoomIn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/zooming_entrances/zoomInDown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/zooming_entrances/zoomInLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/zooming_entrances/zoomInRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/zooming_entrances/zoomInUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/zooming_exits/zoomOut.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/zooming_exits/zoomOutDown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/zooming_exits/zoomOutLeft.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/zooming_exits/zoomOutRight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/animate.css/source/zooming_exits/zoomOutUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index2.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+            <state relative-caret-position="663">
+              <caret line="138" column="29" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -117,8 +27,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3642">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="120">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/index2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="43" column="37" lean-forward="true" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -126,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="111" selection-start-line="5" selection-start-column="111" selection-end-line="5" selection-end-column="111" />
+            <state relative-caret-position="308">
+              <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -142,7 +61,6 @@
       <find>img</find>
       <find>cute.</find>
       <find>.content</find>
-      <find>#frame</find>
       <find>scroll</find>
       <find>font-size</find>
       <find>Hmm</find>
@@ -156,11 +74,21 @@
       <find>animated</find>
       <find>&lt;span&gt;</find>
       <find>fadeInUp</find>
+      <find>slideOutLeft</find>
+      <find>container</find>
+      <find>speech</find>
+      <find>#frame</find>
+      <find>startScreen</find>
+      <find>frame</find>
+      <find>width</find>
+      <find>row</find>
+      <find>contianer</find>
     </findStrings>
     <replaceStrings>
       <replace>#frame</replace>
       <replace>#msgframe</replace>
       <replace>slideOutLeft</replace>
+      <replace>slideInRight</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -169,10 +97,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/static/css/animate.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/static/js/main.js" />
+        <option value="$PROJECT_DIR$/static/css/main.css" />
+        <option value="$PROJECT_DIR$/templates/index2.html" />
       </list>
     </option>
   </component>
@@ -276,7 +205,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550390563317" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550395461329" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -305,12 +234,12 @@
       <updated>1550359072232</updated>
       <workItem from="1550359074762" duration="7226000" />
       <workItem from="1550379719476" duration="879000" />
-      <workItem from="1550381088417" duration="7316000" />
+      <workItem from="1550381088417" duration="10332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15421000" />
+    <option name="totallyTimeSpent" value="18437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -428,24 +357,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="138" column="29" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="111" selection-start-line="5" selection-start-column="111" selection-end-line="5" selection-end-column="111" />
+        <state relative-caret-position="308">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3642">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="120">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/main.js">
+    <entry file="file://$PROJECT_DIR$/templates/index2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+        <state relative-caret-position="401">
+          <caret line="43" column="37" lean-forward="true" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
         </state>
       </provider>
     </entry>
