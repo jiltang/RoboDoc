@@ -13,18 +13,18 @@
   </head>
   <body>
 <nav class="navbar fixed-top navbar-light bg-light">
-  <a class="navbar-brand" >Fixed top</a>
+  <a class="navbar-brand" >RoboDoc</a>
 </nav>
       
     <div class = "container" id="startScreen">
     <div id="welcomeMessage">
-		<h1 id="welcomeToChatbot">Welcome to Chatbot!</h1>
+		<h1 id="welcomeToChatbot">Welcome to RoboDoc!</h1>
 	</div>
 	<div id="tagLine">
 		<h3> Your Friendly Medical Assistant</h3>
 	</div>
         <br/>        
-	<a href="#frame">
+	<a href="#frame2">
         <img id="robotIcon" src="/static/img/cute.png"/>
         <hgroup class="speech-bubble">
 <h2>Click me! I'm here to help!</h2></a>
@@ -32,30 +32,25 @@
         
         <div class="row">
     <div class="container">
-<!--
-	<div>
-		<img src = "/static/img/cute.png", alt = "Friendly ChatBot">
-	</div>
--->
 </div>
 <div id="disclaimer">
-		<p> Disclaimer: ChatBot is here to help give you possible diagnoses based on your symptoms. However, ChatBot is not a doctor and should not be used in place of certified doctors. Please still seek professional medical assistance. </p>
+		<p> Disclaimer: RoboDoc is here to help give you possible diagnoses based on your symptoms. However, RoboDoc is not a doctor and should not be used in place of certified doctors. Please still seek professional medical assistance. </p>
 	</div>
     </div>
 </div>
-
-<div class= "container">
+<div id="frame2"></div>
+<div class= "container chatbot">
     <div id="frame">
         <div class="content">
             <div class="contact-profile">
                 <img src="/static/img/cute.png" alt="" />
-                <p>Chatbot</p>
+                <p>RoboDoc</p>
             </div>
             <div class="messages" id="msgframe">
                 <ul>
                     <li class="sent">
                         <img src="/static/img/cute.png" alt="Friendly ChatBot" />
-                        <p>Welcome to Chatbot, your friendly pre-med! To help me diagnose your disease, please answer a few questions for me.</p>
+                        <p>Welcome to RoboDoc, your friendly local medical assistant! To help me diagnose your disease, please answer a few questions for me.</p>
                     </li>
                     <li class="sent">
                         <img src="/static/img/cute.png" alt="Friendly ChatBot" />
@@ -70,6 +65,25 @@
             </div>
         </div>
     </div>
+</div>
+      
+<div class= "container diagnoses">
+    <h3>Your most probable diagnoses are:</h3>
+    <section class="disease">
+        <h4>Lupus</h4>
+        <p>An abdominal aortic aneurysm is an enlarged area in the lower part of the aorta, the major blood vessel that supplies blood to the body. The aorta, about the thickness of a garden hose, runs from your heart through the center of your chest and abdomen. </p>
+        <a href="#">» Find out more</a>
+    </section>
+    <section class="disease">
+        <h4>Lupus</h4>
+        <p>Lupus is a atehwhtaehwthahdfjhkh atehwhy cjhdjs auiafjks cvxm,</p>
+        <a href="#">» Find out more</a>
+    </section>
+    <section class="disease">
+        <h4>Lupus</h4>
+        <p>Lupus is a atehwhtaehwthahdfjhkh atehwhy cjhdjs auiafjks cvxm,</p>
+        <a href="#">» Find out more</a>
+    </section>
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
