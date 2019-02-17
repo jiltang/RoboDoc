@@ -22,15 +22,10 @@ from flask import Flask, render_template, request, jsonify
 from google.cloud import datastore
 logging.basicConfig(level=logging.DEBUG)
 
-
 NUM_SYMPTOMS = 23
 
-
-
-#class Patient(ndb.Model):
-#    weights = ndb.FloatProperty(repeated=True)
-#    sex = ndb.StringProperty()
-#    age = ndb.IntegerProperty()
+DIAGNOSIS = 137
+NEW_QUESTION = 138
 
 app = Flask(__name__)
 
@@ -81,22 +76,36 @@ def generateQuestionForPatient(patient):
     runningScores[:, 1] = np.squeeze(calculateProbabilityScore(mappingsArr, weights))
     runningScoresNew = runningScores[runningScores[:,1].astype(np.float).argsort()[::-1]]
     logging.info(runningScoresNew)
-    numTop = 5 # ceil(len(diseases) - (len(diseases)/len(symptoms)) * (numQuestions - 1))
-    subset = np.squeeze(runningScoresNew[0:numTop, 0])
-    indices = np.vectorize(lambda x: diseases.index(x))(subset)
-    mappingsArrNew = mappingsArr[indices]
-    stdevs = np.std(mappingsArrNew, axis=0)
-    ranking = list(np.argsort(stdevs)[::-1])
+    numDiseases = len(diseases)
+    numSymptoms = len(symptoms)
     doneIndices = list(np.nonzero(weights)[0])
-    remaining = list(filter(lambda x : x not in doneIndices, ranking))
-    bestSymptom = symptoms[remaining[0]]
-    options = {"Yes": "1", "Maybe": "0", "No": "-0.5"}
-    
-    questions = open('questions.txt', 'r')
-    questions = dict([map(lambda x: x.lower().strip(), line.split(': ')) for line in questions.readlines()])
-    question = questions[bestSymptom]
-    
-    return question, options, bestSymptom
+    numQuestions = len(doneIndices)
+    print(np.std(runningScores[:, 1].astype(np.float)))
+    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.1 * numQuestions):
+        # we're finished
+        bestScore = np.max(runningScores)
+        runningScores = (runningScores > 0.5 * bestScore)
+        winningIndices = list(np.nonzero(runningScores))
+        print(winningIndices)
+        assert False
+        
+    else:
+        numTop = ceil(numDiseases - (numDiseases/numSymptoms) * (numQuestions - 1))
+        subset = np.squeeze(runningScoresNew[0:numTop, 0])
+        indices = np.vectorize(lambda x: diseases.index(x))(subset)
+        mappingsArrNew = mappingsArr[indices]
+        stdevs = np.std(mappingsArrNew, axis=0)
+        ranking = list(np.argsort(stdevs)[::-1])
+
+        remaining = list(filter(lambda x : x not in doneIndices, ranking))
+        bestSymptom = symptoms[remaining[0]]
+        options = {"Yes": "1", "Maybe": "0.25", "No": "-0.5"}
+
+        questions = open('questions.txt', 'r')
+        questions = dict([line.lower().split(': ') for line in questions.readlines()])
+        question = questions[bestSymptom].capitalize()
+
+        return NEW_QUESTION, question, options, bestSymptom
 
 
 @app.route('/createPatientID', methods=['POST'])
@@ -117,9 +126,8 @@ def createPatientID():
     ds.put(entity)
 
     patientKey = str(entity.key.to_legacy_urlsafe())
-    print(entity['weights'])
 
-    question, options, questionID = generateQuestionForPatient(entity)
+    _, question, options, questionID = generateQuestionForPatient(entity)
     
     output = {
         "ID": patientKey,
@@ -132,23 +140,15 @@ def createPatientID():
 @app.route('/receiveResponse', methods=['POST'])
 def receiveResponse():
     ds = datastore.Client()
-    print("Line 135!")
     info = request.get_json()
-    print("Line 137!")
     patientID = info['patientID']
-    print("Line 139!")
-    patientID = patientID[2:-1]
-    print("Line 141!")
+    if patientID.startswith("b'"): patientID = patientID[2:-1]
     print("ID:", patientID)
     questionID = info['questionID']
     answer = info['answer']
     
     weights = [0] * NUM_SYMPTOMS
     entity = ds.get(datastore.key.Key.from_legacy_urlsafe(patientID))
-
-    
-
-    
     
     # we find the index we need to update
     
@@ -161,7 +161,7 @@ def receiveResponse():
     
     ds.put(entity)
     
-    question, options, questionID = generateQuestionForPatient(entity)
+    _, question, options, questionID = generateQuestionForPatient(entity)
     
     output = {
         "ID": patientID,
