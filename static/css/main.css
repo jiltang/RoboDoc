@@ -115,6 +115,22 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 }
 
+@media screen and (max-width: 300px) {
+    #welcomeToChatbot {
+        font-size: 1em;
+    }
+
+    #robotIcon {
+        width: 15vh;
+        height: 15vh;
+    }
+
+    .speech-bubble h2 {
+        color: black !important;
+        font-size: 1em;
+    }
+}
+
 #startScreen, #startScreen *{
     color: white;
     text-align: center;
@@ -443,4 +459,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 #resultsection {
     height: 3em;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 2em;
+    color: white !important;
+    text-align: center;
+    margin-bottom: 1em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+footer p {color: white !important;    font-family: monospace !important;
 }
