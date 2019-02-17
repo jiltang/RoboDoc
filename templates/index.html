@@ -64,7 +64,13 @@
         });
         
         function addQuestion(data) {
-            $('.replies').append();
+            questionTxt = data["question"];
+            answerOpts = data["answers"];
+
+            $('.messages ul').append('<li class="sent"></li>');
+            $('.sent').append("<p>" + questionTxt + "</p>");
+            $('.messages ul').append('<li class="replies"></li>');
+            $('.replies:last-child').append('<a class="btn answer-option btn-primary"  href="#" data-value="6">60+</a>');
         }
 
         $(document).on("click", ".answer-option", function() {
@@ -83,7 +89,7 @@
             $.post('/testAPI', data, addQuestion);
 
             $.post( "ajax/test.html", function( data ) {
-                $( ".result" ).html( data );g
+                $( ".result" ).html( data );
             });
 
             // add new message on the left
