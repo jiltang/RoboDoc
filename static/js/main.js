@@ -142,7 +142,7 @@ function populateDiagnoses() {
         $('.disease:last-child').append('<p>' + element[1] + '</p>');
         $('.disease:last-child').append('<a href="' + element[2] + '"> » Find out more</a>');
     });
-    $("#msgframe").stop().animate({ scrollTop: $("#diagnoses").get(0).scrollHeight}, 1000);
+    $([document.documentElement, document.body]).stop().animate({ scrollTop: $(".diagnoses").offset().top}, 1000);
 }
 
 $(document).one("click", '#robotIcon, .speech-bubble', function() {
