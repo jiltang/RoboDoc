@@ -109,7 +109,8 @@ $(document).on("click", ".answer-option", function() {
     data = {
         "questionID": window.questionID,
         "answer": dataValue,
-        "patientID": window.patientID
+        "patientID": window.patientID,
+        "sex": window.sex
     }
 
     $.ajax({

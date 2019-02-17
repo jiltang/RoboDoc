@@ -72,7 +72,11 @@ def generateQuestionForPatient(patient):
     normalizationArray = mappingsArr.sum(axis=1).reshape(-1,1 )
     mappingsArr = mappingsArr / normalizationArray
     mappingsArr = mappingsArr / mappingsArr.sum(axis=0)
+    if patient['sex'] == '0':
+        mappingsArr[31][:] = 0
+        mappingsArr[38][:] = 0
     logging.info(mappingsArr)
+    logging.info("endo" + str(mappingsArr[31]))
     
     runningScores = np.c_[diseasesNP, np.zeros((len(diseases), 1))]
     
@@ -165,7 +169,8 @@ def receiveResponse():
     questionID = info['questionID']
     answer = info['answer']
     
-    weights = [0] * NUM_SYMPTOMS
+
+#    weights = [0] * NUM_SYMPTOMS
     entity = ds.get(datastore.key.Key.from_legacy_urlsafe(patientID))
     
     # we find the index we need to update
