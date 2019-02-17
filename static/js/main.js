@@ -140,7 +140,7 @@ function populateDiagnoses() {
         $('.diagnoses').append('<section class="disease"></section>');
         $('.disease:last-child').append('<h4>' + element[0] + '</h4>');
         $('.disease:last-child').append('<p>' + element[1] + '</p>');
-        $('.disease:last-child').append('<a href="' + element[0] + '"> » Find out more</a>');
+        $('.disease:last-child').append('<a href="' + element[2] + '"> » Find out more</a>');
     });
     $("#msgframe").stop().animate({ scrollTop: $("#diagnoses").get(0).scrollHeight}, 1000);
 }
