@@ -146,7 +146,7 @@ function populateDiagnoses() {
 }
 
 $(document).one("click", '#robotIcon, .speech-bubble', function() {
-    $([document.documentElement, document.body]).stop().animate({ scrollTop: $("#frame").offset().top}, 1000);
+    $([document.documentElement, document.body]).stop().animate({ scrollTop: $("#frame2").offset().top}, 1000);
     $('.messages ul').append('<li class="sent"></li>');
     $('.sent:last-child').append($('<img class="animated fadeInUp" src="/static/img/cute.png" alt="Friendly RoboDoc"/>').hide());
     $('.sent:last-child').append($('<p class="animated fadeInUp">Welcome to RoboDoc, your friendly local medical assistant! To help me diagnose your disease, please answer a few questions for me.</p>').hide());
