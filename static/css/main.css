@@ -27,7 +27,7 @@ body {
 }
 
 #disclaimer {
-    width: 30vw;
+    width: 50vw;
     margin-left: auto;
     margin-right: auto;
     font-size: 1.0em;
@@ -91,6 +91,28 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     text-align: center;
     font-weight: 900;
     font-size: 5em;
+}
+
+@media screen and (max-width: 1000px) {
+    #welcomeToChatbot {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #welcomeToChatbot {
+        font-size: 2.5em;
+    }
+    
+    #robotIcon {
+        width: 15vh;
+        height: 15vh;
+    }
+    
+.speech-bubble h2 {
+    color: black !important;
+    font-size: 1em;
+}
 }
 
 #startScreen, #startScreen *{

@@ -85,7 +85,7 @@ def generateQuestionForPatient(patient):
     doneIndices = list(np.nonzero(weights)[0])
     numQuestions = len(doneIndices)
     print(np.std(runningScores[:, 1].astype(np.float)))
-    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.05):
+    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.15):
         # we're finished
         nums = runningScores[:, 1].astype(np.float)
         bestScore = np.max(nums)
