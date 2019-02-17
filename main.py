@@ -15,11 +15,15 @@
 # [START gae_flex_quickstart]
 import logging
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
 
+@app.route('/apiTest', methods=['POST'])
+def apiTest():
+    content = request.get_json()
+    return "JSON output:\n" + str(content)
 
 @app.route('/')
 def hello():
