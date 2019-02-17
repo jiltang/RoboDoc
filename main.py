@@ -107,7 +107,7 @@ def generateQuestionForPatient(patient):
 
         remaining = list(filter(lambda x : x not in doneIndices, ranking))
         bestSymptom = symptoms[remaining[0]]
-        options = {"Yes": "1", "Maybe": "0.25", "No": "-0.5"}
+        options = {"Yes": "1", "Maybe": "0.25", "No": "-0.2"}
 
         questions = open('questions.txt', 'r')
         questions = dict([line.lower().split(': ') for line in questions.readlines()])
