@@ -100,6 +100,8 @@ def generateQuestionForPatient(patient):
         indices = np.vectorize(lambda x: diseases.index(x))(subset)
         mappingsArrNew = mappingsArr[indices]
         stdevs = np.std(mappingsArrNew, axis=0)
+        stdevs[0] = 0.2
+        print(stdevs)
         ranking = list(np.argsort(stdevs)[::-1])
 
         remaining = list(filter(lambda x : x not in doneIndices, ranking))
