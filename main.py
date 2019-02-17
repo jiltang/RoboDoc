@@ -81,7 +81,7 @@ def generateQuestionForPatient(patient):
     doneIndices = list(np.nonzero(weights)[0])
     numQuestions = len(doneIndices)
     print(np.std(runningScores[:, 1].astype(np.float)))
-    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.2):
+    if numQuestions == NUM_SYMPTOMS or (numQuestions >= 3 and np.std(runningScores[:, 1].astype(np.float)) > 0.27):
         # we're finished
         nums = runningScores[:, 1].astype(np.float)
         bestScore = np.max(nums)
@@ -173,15 +173,27 @@ def receiveResponse():
     
     ds.put(entity)
     
-    _, question, options, questionID = generateQuestionForPatient(entity)
-    
-    output = {
-        "ID": patientID,
-        "question": question,
-        "options": options,
-        "questionID": questionID
-    }
-    return jsonify(output)
+    output = generateQuestionForPatient(entity)
+    returnType = output[0]
+
+    if returnType == DIAGNOSIS:
+        print("A")
+        returnType, winningDiseases = output
+        winningDiseases = winningDiseases.tolist()
+        data = {
+            "type": "diagnosis",
+            "diagnoses": winningDiseases
+        }
+    else:
+        returnType, question, options, questionID = output
+        data = {
+            "type": "question",
+            "ID": patientID,
+            "question": question,
+            "options": options,
+            "questionID": questionID
+        }
+    return jsonify(data)
 
 @app.errorhandler(500)
 def server_error(e):

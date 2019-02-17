@@ -1,3 +1,8 @@
+function addNewMessage() {
+      $('.messages ul').append('<li class="sent"></li>');
+    $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
+}
+
 $(document).on("click", ".sex", function() {
     $('.sex').hide();
 
@@ -25,7 +30,19 @@ $(document).on("click", ".sex", function() {
 });
 
 function addQuestion(data) {
-    questionTxt = data["question"];
+    if (data["type"] == "diagnosis") {
+        window.diagnoses = data["diagnoses"];
+        var diagnoses = window.diagnoses;
+        alert(diagnoses);
+
+        diagnoses.forEach(function(element) {
+            addNewMessage();
+            $('.sent:last-child').append('<p><b>' + element[0] + '</b>'+ '</p><p>' + element[1] + '</p>');
+        });
+            $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
+
+    } else {
+        questionTxt = data["question"];
     answerOpts = data["options"];
     window.patientID = data['ID'];
 
@@ -46,6 +63,7 @@ function addQuestion(data) {
     });
     $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
     console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
+    }
 }
 
 $(document).on('click', '.age', function() {
@@ -68,9 +86,8 @@ $(document).on('click', '.age', function() {
       success: addQuestion
     });
 
-    $('.messages ul').append('<li class="sent"></li>');
-    $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
     $('.sent:last-child').append('<p class="saving"><span>.</span><span>.</span><span>.</span></p>');
+  
     $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
 });
 
