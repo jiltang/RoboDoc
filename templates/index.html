@@ -33,13 +33,6 @@
                         <a class="btn demographic btn-primary"   href="#" data-value="0">Female</a>
                         <a class="btn demographic btn-primary" href="#"  data-value="-1">Male</a>
                     </li>
-                    <li class="sent" hidden>
-                        <img src="/static/img/cute.jpg" alt="" />
-                        <p>What is your age?</p>
-                    </li>
-                    <li class="replies" hidden>
-                        <input id="number" type="number" max="120" min="0">
-                    </li>
                     <!--<li class="sent">-->
                         <!--<img src="/static/img/cute.jpg" alt="" />-->
                         <!--<p>Do you have chest pain?</p>-->
@@ -72,8 +65,27 @@
             // get the data value of this element
             var dataValue = $(this).attr('data-value');
             $('.replies:last-child').append('<p>' + $(this).text() + '</p>');
+            console.log("ya clicked one!")
 
-            $('.demographic').removeAttr("hidden")
+            $('.messages ul').append('<li class="sent"></li>');
+            $('.sent:last-child').append('<img src="/static/img/cute.jpg" alt="" />');
+            $('.sent:last-child').append('<p>What is your age?</p>');
+            $('.messages ul').append('<li class="replies"></li>');
+            $('.replies:last-child').append('<a class="btn demographic btn-primary"  href="#" data-value="1">60+</a>');
+            $('.replies:last-child').append('<a class="btn demographic btn-primary"  href="#" data-value="2">41-60</a>');
+            $('.replies:last-child').append('<a class="btn demographic btn-primary"  href="#" data-value="3">19-40</a>');
+            $('.replies:last-child').append('<a class="btn demographic btn-primary"  href="#" data-value="4">14-18</a>');
+            $('.replies:last-child').append('<a class="btn demographic btn-primary"  href="#" data-value="5">6-13</a>');
+            $('.replies:last-child').append('<a class="btn demographic btn-primary"  href="#" data-value="6">3-5</a>');
+            $('.replies:last-child').append('<a class="btn demographic btn-primary"  href="#" data-value="7">0-2</a>');
+
+            //$('.demographic').hide();
+
+            // get the data value of this element
+            // var dataValue = $(this).attr('data-value');
+            // $('li.replies:last-child:visible > a').replaceWith( "<p>" + $(this).text() + "</p>" );
+
+            //$('.demographic').removeAttr("hidden")
 
             console.log("done")
 
