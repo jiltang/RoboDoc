@@ -3,12 +3,13 @@
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900");
 
 
+
 body {
-  display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #111111;
+/*  background: #4775dd;*/
+  background-image: linear-gradient(#85afd9 0%, #0a71ea 50%, #06289b 100%);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1em;
   letter-spacing: 0.1px;
@@ -18,12 +19,71 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+#startScreen {
+    height: 100vh;
+    margin-top: 25vh;
+}
+
+#disclaimer {
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.0em;
+    font-style: italic;
+}
+
+#robotIcon {
+    width: 30vh;
+    height: 30vh;
+}
+
+.speech-bubble {
+    padding: 10px;
+    display: inline-block;
+	position: relative;
+	background: white;
+	border-radius: .4em;
+    width: 20vw;
+}
+
+.speech-bubble h2 {
+    color: black !important;
+    font-size: 1.5em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 40px solid transparent;
+	border-right-color: white;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -20px;
+	margin-left: -40px;
+}
+
+
+.hgroup {
+    width: 30vw;
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     font-family: "Source Sans Pro" !important;
 }
 
-#startScreen{
+#welcomeToChatbot {
+    text-align: center;
+    font-weight: 900;
+    font-size: 5em;
+}
+
+#startScreen, #startScreen *{
   color: white;
+  text-align: center;
 }
 
 #frame {
