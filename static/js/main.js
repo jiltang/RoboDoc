@@ -1,3 +1,10 @@
+var clickEvent = (function() {
+  if ('ontouchstart' in document.documentElement === true)
+    return 'touchstart';
+  else
+    return 'click';
+})();
+
 function addNewMessage() {
     $('.messages ul').append('<li class="sent"></li>');
     $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
