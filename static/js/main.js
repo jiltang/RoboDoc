@@ -8,9 +8,11 @@ $(document).on("click", ".sex", function() {
     window.sex = dataValue;
 
     $('.messages ul').append('<li class="sent"></li>');
-    $('.sent:last-child').append('<img src="/static/img/cute.jpg" alt="" />');
+    $('.sent:last-child').append('<img src="/static/img/cute.png" alt="" />');
     $('.sent:last-child').append('<p>What is your age?</p>');
     $('.messages ul').append('<li class="replies"></li>');
+    $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
+    console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
     $('.replies:last-child').append('<a class="btn age btn-primary"  href="#" data-value="6">60+</a>');
     $('.replies:last-child').append('<a class="btn age btn-primary"  href="#" data-value="5">41-60</a>');
     $('.replies:last-child').append('<a class="btn age btn-primary"  href="#" data-value="4">19-40</a>');
@@ -18,6 +20,8 @@ $(document).on("click", ".sex", function() {
     $('.replies:last-child').append('<a class="btn age btn-primary"  href="#" data-value="2">6-13</a>');
     $('.replies:last-child').append('<a class="btn age btn-primary"  href="#" data-value="1">3-5</a>');
     $('.replies:last-child').append('<a class="btn age btn-primary"  href="#" data-value="0">0-2</a>');
+    $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
+    console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
 });
 
 function addQuestion(data) {
@@ -26,16 +30,20 @@ function addQuestion(data) {
     window.patientID = data['ID'];
 
     $('.messages ul').append('<li class="sent"></li>');
-    $('.sent:last-child').append('<img src="/static/img/cute.jpg"/>');
+    $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
 
     $('.sent:last-child').append("<p>" + questionTxt + "</p>");
     $('.messages ul').append('<li class="replies"></li>');
+    $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
+    console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
     
     window.questionID = data['questionID'];
     
     Object.entries(answerOpts).forEach(function(x) {
         $('.replies:last-child').append('<a class="btn answer-option btn-primary"  href="#" data-value="' + x[1] + '">' + x[0] + '</a>');
     });
+    $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
+    console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
 }
 
 $(document).on('click', '.age', function() {
@@ -83,6 +91,8 @@ $(document).on("click", ".answer-option", function() {
 
     // add new message on the left
     $('.messages ul').append('<li class="sent"></li>');
-    $('.sent:last-child').append('<img src="/static/img/cute.jpg"/>');
+    $('.sent:last-child').append('<img src="/static/img/cute.png"/>');
     $('.sent:last-child').append('<p>Hmm.  Processing.</p>');
+    $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
+    console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
 });
