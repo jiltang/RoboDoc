@@ -135,7 +135,3 @@ $(document).on("click", ".answer-option", function() {
     $("#msgframe").stop().animate({ scrollTop: $("#msgframe").get(0).scrollHeight}, 1000);
     console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
 });
-
-$("#robotIcon, .speech-bubble").click( function() {
-    $('.curtainPanel').css("width", "50%");
-});

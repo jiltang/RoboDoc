@@ -1,90 +1,82 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/main.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/css/main.css" crossorigin="anonymous">
 
-    <title>RoboDoc</title>
-</head>
-<body>
+    <title>Hello, world!</title>
+  </head>
+  <body>
 <nav class="navbar fixed-top navbar-light bg-light">
-    <a class="navbar-brand" >Fixed top</a>
+  <a class="navbar-brand" >Fixed top</a>
 </nav>
+      
+    <div class = "container" id="startScreen">
+    <div id="welcomeMessage">
+		<h1 id="welcomeToChatbot">Welcome to Chatbot!</h1>
+	</div>
+	<div id="tagLine">
+		<h3> Your Friendly Medical Assistant</h3>
+	</div>
+        <br/>        
+	<a href="#frame">
+        <img id="robotIcon" src="/static/img/cute.png"/>
+        <hgroup class="speech-bubble">
+<h2>Click me! I'm here to help!</h2></a>
+</hgroup>
+        
+        <div class="row">
+    <div class="container">
+<!--
+	<div>
+		<img src = "/static/img/cute.png", alt = "Friendly ChatBot">
+	</div>
+-->
+</div>
+<div id="disclaimer">
+		<p> Disclaimer: ChatBot is here to help give you possible diagnoses based on your symptoms. However, ChatBot is not a doctor and should not be used in place of certified doctors. Please still seek professional medical assistance. </p>
+	</div>
+    </div>
+</div>
 
-<div class = "curtain" id="startScreen">
-    <div class="curtainWrapper">
-        <div class="curtainPanel">
-            <div id="welcomeMessage">
-                <h1 id="welcomeToChatbot">Welcome to Chatbot!</h1>
+<div class= "container">
+    <div id="frame">
+        <div class="content">
+            <div class="contact-profile">
+                <img src="/static/img/cute.png" alt="" />
+                <p>Chatbot</p>
             </div>
-            <div id="tagLine">
-                <h3>Your Friendly Medical Assistant</h3>
-            </div>
-            <br/>
-            <img id="robotIcon" src="/static/img/cute.png"/>
-            <hgroup class="speech-bubble">
-                <h2>Click me! I'm here to help!</h2>
-            </hgroup>
-
-            <div id="disclaimer">
-                <p> Disclaimer: ChatBot is here to help give you possible diagnoses based on your symptoms. However, ChatBot is not a doctor and should not be used in place of certified doctors. Please still seek professional medical assistance. </p>
-            </div>
-
-            <!--<div class="row">-->
-                <!--<div class="container">-->
-                    <!--&lt;!&ndash;-->
-                        <!--<div>-->
-                            <!--<img src = "/static/img/cute.png", alt = "Friendly ChatBot">-->
-                        <!--</div>-->
-                    <!--&ndash;&gt;-->
-                <!--</div>-->
-                <!---->
-            <!--</div>-->
-        </div>
-
-        <div class="behindCurtain">
-            <div class="container">
-                <div id="frame">
-                    <div class="content">
-                        <div class="contact-profile">
-                            <img src="/static/img/cute.png" alt="" />
-                            <p>Chatbot</p>
-                        </div>
-                        <div class="messages" id="msgframe">
-                            <ul>
-                                <li class="sent">
-                                    <img src="/static/img/cute.png" alt="Friendly ChatBot" />
-                                    <p>Welcome to Chatbot, your friendly pre-med! To help me diagnose your disease, please answer a few questions for me.</p>
-                                </li>
-                                <li class="sent">
-                                    <img src="/static/img/cute.png" alt="Friendly ChatBot" />
-                                    <p>What is your biological sex?</p>
-                                </li>
-                                <li class="replies">
-                                    <a class="btn sex btn-primary"  data-value="2">Other</a>
-                                    <a class="btn sex btn-primary"  data-value="1">Female</a>
-                                    <a class="btn sex btn-primary" data-value="0">Male</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="messages" id="msgframe">
+                <ul>
+                    <li class="sent">
+                        <img src="/static/img/cute.png" alt="Friendly ChatBot" />
+                        <p>Welcome to Chatbot, your friendly pre-med! To help me diagnose your disease, please answer a few questions for me.</p>
+                    </li>
+                    <li class="sent">
+                        <img src="/static/img/cute.png" alt="Friendly ChatBot" />
+                        <p>What is your biological sex?</p>
+                    </li>
+                    <li class="replies">
+                        <a class="btn sex btn-primary"  data-value="2">Other</a>
+                        <a class="btn sex btn-primary"  data-value="1">Female</a>
+                        <a class="btn sex btn-primary" data-value="0">Male</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/main.js"></script>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="/static/js/main.js"></script>
-
-</body>
+  </body>
 </html>
