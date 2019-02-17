@@ -129,9 +129,7 @@ $(document).on("click", ".answer-option", function() {
     console.log("content scrollheight: " + $("#msgframe").get(0).scrollHeight);
 });
 
-$(document).on("click", '#robotIcon, .speech-bubble', function() {
-    $([document.documentElement, document.body]).stop().animate({ scrollTop: $("#frame2").offset().top}, 1000);
-});
+
 
 function populateDiagnoses() {
     var diagnoses = window.diagnoses;
@@ -146,3 +144,22 @@ function populateDiagnoses() {
     $("#msgframe").stop().animate({ scrollTop: $("#diagnoses").get(0).scrollHeight}, 1000);
 }
                       
+$(document).one("click", '#robotIcon, .speech-bubble', function() {
+    $([document.documentElement, document.body]).stop().animate({ scrollTop: $("#frame").offset().top}, 1000);
+    $('.messages ul').append('<li class="sent"></li>');
+    $('.sent:last-child').append($('<img class="animated fadeInUp" src="/static/img/cute.png" alt="Friendly RoboDoc"/>').hide());
+    $('.sent:last-child').append($('<p class="animated fadeInUp">Welcome to RoboDoc, your friendly local medical assistant! To help me diagnose your disease, please answer a few questions for me.</p>').hide());
+    $('.sent:last-child').children("img, p").delay(1000).fadeIn(1);
+
+    $('.messages ul').append('<li class="sent"></li>');
+    $('.sent:last-child').append($('<img class="animated fadeInUp" src="/static/img/cute.png" alt="Friendly RoboDoc"/>').hide());
+    $('.sent:last-child').append($('<p class="animated fadeInUp">What is your biological sex?</p>').hide());
+    $('.sent:last-child').children("img, p").delay(2750).fadeIn(1);
+
+    $('.messages ul').append('<li class="replies"></li>');
+    $('.replies:last-child').append($('<a class="btn sex btn-primary animated slideInRight" data-value="2">Other</a>').hide());
+    $('.replies:last-child').append($('<a class="btn sex btn-primary animated slideInRight" data-value="1">Female</a>').hide());
+    $('.replies:last-child').append($('<a class="btn sex btn-primary animated slideInRight" data-value="0">Male</a>').hide());
+    $('.replies:last-child > a').delay(3500).fadeIn(1000);
+});
+>>>>>>> a4d6d2bde377d072abcc346818453d0bce2c17a5
