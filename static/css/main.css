@@ -101,7 +101,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 #frame {
   width: 95%;
   min-width: 360px;
-  max-width: 500px;
+  max-width: 800px;
   height: 92vh;
   min-height: 300px;
   max-height: 720px;
@@ -121,7 +121,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     float: right;
     margin-left: 10px;
     color: white !important;
-    background-color: white! 
+/*    background-color: white !important;*/
+    border-radius: 10px;
+    font-size: 1em;
 }
 
 .answer-option:hover, .sex:hover, .age:hover {
@@ -378,3 +380,34 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   animation-delay: .4s;
 }
 
+.diagnoses {
+    margin-top: 4em;
+    width: 95%;
+  min-width: 360px;
+  max-width: 800px;
+    background-color: rgb(230, 234, 234);
+    padding: 1.5em;
+    margin-bottom: 6em;
+}
+
+.disease {
+    background-color: white;
+    border-radius: 5px;
+    padding: 0.4em 1em 1em 1em;
+    margin: 1.5em 0px;
+}
+
+.disease h4 {
+    font-weight: 800;
+    border-bottom: 1px solid #888;
+    line-height: 2em;
+    margin-bottom: 10px;
+}
+
+.chatbot {
+    height: 95vh;
+}
+
+#frame2 {
+    height: 6em;
+}
